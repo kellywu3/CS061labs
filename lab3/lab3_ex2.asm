@@ -1,0 +1,23 @@
+.ORIG x3000
+;Instructions
+LEA R0, PROMPT
+PUTS
+
+LEA R1, ARRAY_1
+LD R2, CNT
+
+DO_WHILE
+GETC
+OUT
+STR R0, R1, #0
+ADD R1, R1, #1
+ADD R2, R2, #-1
+BRp DO_WHILE
+END_DO_WHILE
+
+HALT
+;Local Data
+CNT .FILL #10
+PROMPT .STRINGZ "Enter 10 characters: "
+ARRAY_1 .BLKW #10
+.END

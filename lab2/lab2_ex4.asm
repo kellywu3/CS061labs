@@ -1,0 +1,14 @@
+.ORIG x3000
+;Instructions
+LD R0, VAL1
+LD R1, VAL2
+DO_WHILE OUT 
+    ADD R0, R0, #1
+    ADD R1, R1, #-1
+    BRp DO_WHILE
+
+HALT
+;Local Data
+VAL1 .FILL x61
+VAL2 .FILL x1A
+.END
